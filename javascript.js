@@ -2,8 +2,6 @@ var boxes = document.getElementsByClassName("box");
 var rgbCode = document.getElementById("rgbCode");
 var resultDisplay = document.getElementById("result");
 var title = document.getElementById("#title");
-var ansColor = getColor();
-var ans = Math.floor(Math.random() * 5);
 
 // function to generate a random rgb() color code
 function getColor() {
@@ -24,7 +22,8 @@ for (i = 0; i < 6; i++) {
 }
 
 // picking up a right and box and displaying the rgb() code
-
+var ansColor = getColor();
+var ans = Math.floor(Math.random() * 5);
 boxes[ans].style.backgroundColor = ansColor;
 rgbCode.textContent = ansColor.toUpperCase();
 
@@ -39,7 +38,6 @@ function correctAnswer() {
     rgbCode.style.width = "300px";
     rgbCode.style.backgroundColor = "green";
     rgbCode.style.margin = "0 auto";
-
     rgbCode.addEventListener("click", resetGame);
 }
 
@@ -53,7 +51,7 @@ function resetGame() {
         boxes[i].style.backgroundColor = getColor();
     }
     ans = Math.floor(Math.random() * 5);
-    var ansColor = getColor();
+    ansColor = getColor();
     boxes[ans].style.backgroundColor = ansColor;
     rgbCode.style.border = "none";
     rgbCode.style.width = "auto";
