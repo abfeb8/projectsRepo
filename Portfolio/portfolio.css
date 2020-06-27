@@ -1,0 +1,16 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h3 {
+    margin-left: 1.66%;
+    text-transform: uppercase;
+    border-bottom: 2px lightgray solid;
+    padding-bottom: 10px;
+    margin-right: 65%;
+}
+
+img {
+    width: 30%;
+    float: left;
+    margin: 1.66%;
+}
