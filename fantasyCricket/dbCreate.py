@@ -83,10 +83,10 @@ c = conn.cursor()
 
 
 '''listing tables'''
-c.execute("SELECT * FROM match")
+# c.execute("SELECT * FROM match")
 # c.execute("SELECT * FROM teams")
 # c.execute("SELECT * FROM stats")
-print(c.fetchall())
+# print(c.fetchall())
 
 conn.commit()
 conn.close()
