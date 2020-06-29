@@ -4,6 +4,9 @@ import sqlite3
 conn = sqlite3.connect('database.db')
 c = conn.cursor()
 
+# global variable set to store the selected team
+currentTeam = set()
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -411,8 +414,20 @@ class Ui_MainWindow(object):
         self.radioAr.clicked.connect(lambda: self.radioClick('AR'))
         self.radioWk.clicked.connect(lambda: self.radioClick('WK'))
 
-#  ****************************************************************************************
+        # creating event to select player from the playerDisplay
+        self.playerDiaplay1.mousePressEvent = self.displayLable1Clicked
+        self.playerDiaplay2.mousePressEvent = self.displayLable2Clicked
+        self.playerDiaplay3.mousePressEvent = self.displayLable3Clicked
+        self.playerDiaplay4.mousePressEvent = self.displayLable4Clicked
+        self.playerDiaplay5.mousePressEvent = self.displayLable5Clicked
+        self.playerDiaplay6.mousePressEvent = self.displayLable6Clicked
+        self.playerDiaplay7.mousePressEvent = self.displayLable7Clicked
+        self.playerDiaplay8.mousePressEvent = self.displayLable8Clicked
+        self.playerDiaplay9.mousePressEvent = self.displayLable9Clicked
+        self.playerDiaplay10.mousePressEvent = self.displayLable10Clicked
+        self.playerDiaplay11.mousePressEvent = self.displayLable11Clicked
 
+# ****************************************************************************************
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -443,13 +458,16 @@ class Ui_MainWindow(object):
         self.actionSave_Team.setText(_translate("MainWindow", "Save Team"))
         self.actionEvaluate_Team.setText(
             _translate("MainWindow", "Evaluate Team"))
+
 # ****************************************************************************************
 
     def clickedNewTeam(self):  # function to perform when new team option is selected
         # it will clear the previous list if present
         for i in range(1, 12):
             lable = getattr(self, 'playerDiaplay{}'.format(i))
+            lable2 = getattr(self, 'teamDisplay{}'.format(i))
             lable.setText("")
+            lable2.setText("")
         # seting all the value to there default values
         self.batCount.setText('0')
         self.bowCount.setText('0')
@@ -462,6 +480,7 @@ class Ui_MainWindow(object):
         # it will clear the previous list if present
         for i in range(1, 12):
             lable = getattr(self, 'playerDiaplay{}'.format(i))
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
             lable.setText("")
         # getting the players from our data base of the seleted catogeery
         c.execute("""
@@ -474,6 +493,141 @@ class Ui_MainWindow(object):
             lable = getattr(self, 'playerDiaplay{}'.format(k))
             lable.setText(str(i[0]))
             k += 1
+
+    def displayLable1Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('1'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    def displayLable2Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('2'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    def displayLable3Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('3'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    def displayLable4Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('4'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    def displayLable5Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('5'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    def displayLable6Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('6'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    def displayLable7Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('7'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    def displayLable8Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('8'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    def displayLable9Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('9'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    def displayLable10Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('10'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    def displayLable11Clicked(self, text):
+        global currentTeam
+        lable = getattr(self, 'playerDiaplay{}'.format('11'))
+        if (lable.styleSheet()) == 'color: rgb(0, 170, 255);':
+            lable.setStyleSheet("color: rgb(0, 0, 0);")
+            currentTeam.remove(lable.text())
+        else:
+            lable.setStyleSheet("color: rgb(0, 170, 255);")
+            currentTeam.add(lable.text())
+        self.teamDisplay()
+
+    # function to show current selected players in the team display menu
+    def teamDisplay(self):
+        global currentTeam
+        k = 1
+        currentTeam = list(currentTeam)
+        for i in range(11):
+            lable = getattr(self, 'teamDisplay{}'.format(str(k)))
+            try:
+                lable.setText(currentTeam[i])
+            except Exception:
+                lable.setText('')
+            k += 1
+        currentTeam = set(currentTeam)
 
 
 # ****************************************************************************************
