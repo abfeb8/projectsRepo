@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sqlite3
 
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('./fantasyCricket/database.db')
 c = conn.cursor()
 
 # global variable set to store the selected team
@@ -624,10 +624,17 @@ class Ui_MainWindow(object):
             lable = getattr(self, 'teamDisplay{}'.format(str(k)))
             try:
                 lable.setText(currentTeam[i])
+                lable.setStyleSheet("color: rgb(0, 170, 255);")
             except Exception:
                 lable.setText('')
             k += 1
         currentTeam = set(currentTeam)
+
+    # # function to perform when SAVE Team option is choosen
+    # def clickedSaveTeam(self):
+    #     c.execute("""
+    #               INSERT INTO teams VALUES(:team,:player,:value)
+    #               """, {'team': teamName, 'player': playerName, 'value': playerValue})
 
 
 # ****************************************************************************************
