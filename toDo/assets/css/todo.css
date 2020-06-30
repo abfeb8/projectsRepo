@@ -1,3 +1,93 @@
 body {
-    background-color: blueviolet;
+    background: #22c1c3; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #fdbb2d,
+        #22c1c3
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #fdbb2d,
+        #22c1c3
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#container {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    background-color: seagreen;
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: white;
+    height: 40px;
+    line-height: 40px;
+    color: #666;
+}
+
+li:nth-child(2n) {
+    background: #f7f7f7;
+}
+
+input {
+    font-size: 18px;
+    color: #2980b9;
+    height: 40px;
+    background-color: #f3f3f3;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border: 3px solid rgba(0, 0, 0, 0);
+}
+
+input:focus {
+    background: white;
+    border: 3px solid #2980b9;
+    outline: none;
+}
+
+.todoComplete {
+    color: gray;
+    text-decoration: line-through;
+}
+.fa-plus {
+    float: right;
+    padding-top: 3px;
+}
+span {
+    font-size: 10px;
+    background-color: tomato;
+    margin-right: 20px;
+    text-align: center;
+    color: white;
+    height: 40px;
+    width: 0px;
+    display: inline-block;
+    transition: 0.2s linear;
+    opacity: 0;
+}
+li:hover span {
+    width: 40px;
+    opacity: 1;
 }
