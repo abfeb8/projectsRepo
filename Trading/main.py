@@ -21,4 +21,27 @@ def filterData(a, b):
     return mix
 
 
-print(filterData(2, 19))
+def tradeConfirmation(row):
+    if row["Call"] == "Long":
+        if row["Trade_Low"] <= row["Price"]:
+            row["Trade"] = 'In'
+            return True
+        else:
+            row['Trade'] = 'Out'
+            return False
+    else:
+        # short position
+        if row["Call"] == "Short":
+            if row["Trade_Low"] >= row["Price"]:
+                row["Trade"] = 'In'
+                return True
+            else:
+                row['Trade'] = 'Out'
+                return False
+            pass
+
+
+rows = filterData(2, 19)
+
+tradeConfirmation(rows[0])
+print(rows[0])
