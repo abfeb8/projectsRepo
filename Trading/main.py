@@ -7,9 +7,23 @@ names = sheet.row_values(1)
 def filterData(a, b):  # will return a list of dictionary containg rows to be processed
     # a, b is the range of rows which need to be processed
     # this is an examle of an element of the list
-    '''{'Timestamp': '12/07/2020', 'Call': 'Long', 'Stock Name': 'ULTRACEMCO', 'Stop Loss': '3740', 'Price': '3790',
-    'Target': '4030', 'SL%': '1.32%', 'Target%': '6.33%', 'Risk/Reward': '0.21', 'Live': '3870', 'Dlow': '3781',
-    'DHigh': '3901', 'Trade': '', 'Status': '', 'Trade_LTP': '3779.5', 'Trade_Low': '3735', 'Trade_High': '3869'}'''
+    '''{'Call': 'Long',
+        'DHigh': '447.3',
+        'Dlow': '436.55',
+        'Live': '443.15',
+        'Price': '446.3',
+        'Risk/Reward': '0.27',
+        'SL%': '1.68%',
+        'Status': '',
+        'Stock Name': 'CONCOR',
+        'Stop Loss': '438.8',
+        'Target': '474.3',
+        'Target%': '6.27%',
+        'Timestamp': '26/07/2020',
+        'Trade': '',
+        'Trade_High': '447.3',
+        'Trade_LTP': '443.15',
+        'Trade_Low': '436.55'}'''
     # for every row there will be one dictionary element present
     mix = []
     range_data = sheet.get("A{}:Q{}".format(a, b))
@@ -49,6 +63,4 @@ def tradeConfirmation(row):  # check wethere a trade has been taken or not
 
 rows = filterData(2, 19)
 
-for i in rows:
-    tradeConfirmation(i)
-    # print(i["Stock Name"], i["Trade"])
+print(rows)
