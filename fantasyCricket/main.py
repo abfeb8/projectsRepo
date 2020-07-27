@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sqlite3
 
-conn = sqlite3.connect('./fantasyCricket/database.db')
+conn = sqlite3.connect('database.db')
 c = conn.cursor()
 
 # global variable set to store the selected team
