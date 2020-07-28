@@ -45,7 +45,7 @@ def tradeConfirmation(row):  # check wethere a trade has been taken or not
                 row['Trade'] = 'Out'
                 return False
         except Exception:
-            print(">>Error in ", row["Stock Name"])
+            print(">>Something wrong with ", row["Stock Name"])
 
     else:
         # short position
@@ -58,9 +58,30 @@ def tradeConfirmation(row):  # check wethere a trade has been taken or not
                     row['Trade'] = 'Out'
                     return False
             except Exception:
-                print(">>Error in ", row["Stock Name"])
+                print(">>Something wrong with ", row["Stock Name"])
+
+
+def checkStop(row):  # check if the stock has hit stop loss or not
+    if row["Trade"] == "In":
+        if row["Trade_LTP"] <= row["Stop Loss"]:
+            row["Status"] = 'Stoped'
+            row["Trade"] = "Complet"  # will marke the trade as complete
+        else:
+            row["Status"] = 'Between'
+
+
+def checkTatget(row):  # check if the stock has hit target price or not
+    if row["Trade"] == "In":
+        if row["Trade_LTP"] >= row["Target"]:
+            row["Status"] = 'Target'
+            row["Trade"] = "Complet"  # will marke the trade as complete
+        else:
+            row["Status"] = 'Between'
 
 
 rows = filterData(2, 19)
-
-print(rows)
+for i in rows:
+    tradeConfirmation(i)
+    checkStop(i)
+    checkTatget(i)
+    print(i["Stock Name"], i["Trade"], i["Status"])
