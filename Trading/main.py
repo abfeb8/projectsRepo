@@ -63,25 +63,52 @@ def tradeConfirmation(row):  # check wethere a trade has been taken or not
 
 def checkStop(row):  # check if the stock has hit stop loss or not
     if row["Trade"] == "In":
-        if row["Trade_LTP"] <= row["Stop Loss"]:
+        if float(row["Trade_LTP"]) <= float(row["Stop Loss"]):
             row["Status"] = 'Stoped'
-            row["Trade"] = "Complet"  # will marke the trade as complete
+            row["Trade"] = "Exit"  # will marke the trade as complete
         else:
             row["Status"] = 'Between'
 
 
 def checkTatget(row):  # check if the stock has hit target price or not
     if row["Trade"] == "In":
-        if row["Trade_LTP"] >= row["Target"]:
+        if float(row["Trade_LTP"]) >= float(row["Target"]):
             row["Status"] = 'Target'
-            row["Trade"] = "Complet"  # will marke the trade as complete
+            row["Trade"] = "Exit"  # will marke the trade as complete
         else:
             row["Status"] = 'Between'
 
 
-rows = filterData(2, 19)
+def update2Sheet():   # write the updated data to google sheet
+    updatedData = []
+    for i in rows:
+        updatedData.append([i["Trade"], i["Status"], float(i["Trade_LTP"]),
+                            float(i["Trade_Low"]), float(i["Trade_High"])])
+    sheet.update('M{}:Q{}'.format(a, b), updatedData)
+
+
+def updatPrice(row):
+    # check if trade is Exited or not
+    if row["Trade"] != "Exit":
+        try:
+            # update Trade_LTP
+            row["Trade_LTP"] = float(row["Live"])
+            # update Trade_Low price
+            if float(row["Trade_Low"]) > float(row["DLow"]):
+                row["Trade_Low"] = row["DLow"]
+            # update Trade_high price
+            if float(row["Trade_High"]) < float(row["DHigh"]):
+                row["Trade_High"] = row["DHigh"]
+        except Exception:
+            pass
+
+
+a, b = [2, 19]
+rows = filterData(a, b)
+
 for i in rows:
+    updatPrice(i)
     tradeConfirmation(i)
-    checkStop(i)
     checkTatget(i)
-    print(i["Stock Name"], i["Trade"], i["Status"])
+    checkStop(i)
+update2Sheet()
