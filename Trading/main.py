@@ -1,7 +1,7 @@
 from connect import *
 
 sheet = Connect("Weekly Buy-Sell", "Clean")
-names = sheet.row_values(1)
+names = sheet.row_values(2)
 
 
 def filterData(a, b):  # will return a list of dictionary containg rows to be processed
@@ -29,10 +29,26 @@ def filterData(a, b):  # will return a list of dictionary containg rows to be pr
     range_data = sheet.get("A{}:Q{}".format(a, b))
     for i in range(len(range_data)):
         temp = {}
-        for j in range(len(names)):
+        for j in range(17):
             temp[names[j]] = range_data[i][j]
         mix.append(temp)
     return mix
+
+
+def updatPrice(row):    # update daily price
+    # check if trade is Exited or not
+    if row["Trade"] != "Exit":
+        try:
+            # update Trade_LTP
+            row["Trade_LTP"] = float(row["Live"])
+            # update Trade_Low price
+            if float(row["Trade_Low"]) > float(row["DLow"]):
+                row["Trade_Low"] = row["DLow"]
+            # update Trade_high price
+            if float(row["Trade_High"]) < float(row["DHigh"]):
+                row["Trade_High"] = row["DHigh"]
+        except Exception:
+            pass
 
 
 def tradeConfirmation(row):  # check wethere a trade has been taken or not
@@ -87,28 +103,14 @@ def update2Sheet():   # write the updated data to google sheet
     sheet.update('M{}:Q{}'.format(a, b), updatedData)
 
 
-def updatPrice(row):
-    # check if trade is Exited or not
-    if row["Trade"] != "Exit":
-        try:
-            # update Trade_LTP
-            row["Trade_LTP"] = float(row["Live"])
-            # update Trade_Low price
-            if float(row["Trade_Low"]) > float(row["DLow"]):
-                row["Trade_Low"] = row["DLow"]
-            # update Trade_high price
-            if float(row["Trade_High"]) < float(row["DHigh"]):
-                row["Trade_High"] = row["DHigh"]
-        except Exception:
-            pass
-
-
-a, b = [2, 19]
+a, b = map(int, input("Enter Row Numbers: ").split())
+print("Importing Data")
 rows = filterData(a, b)
-
+print("Processing Data")
 for i in rows:
     updatPrice(i)
     tradeConfirmation(i)
     checkTatget(i)
     checkStop(i)
 update2Sheet()
+print("Done")
