@@ -103,14 +103,20 @@ def update2Sheet():   # write the updated data to google sheet
     sheet.update('M{}:Q{}'.format(a, b), updatedData)
 
 
-a, b = map(int, input("Enter Row Numbers: ").split())
-print("Importing Data")
-rows = filterData(a, b)
-print("Processing Data")
-for i in rows:
-    updatPrice(i)
-    tradeConfirmation(i)
-    checkTatget(i)
-    checkStop(i)
-update2Sheet()
-print("Done")
+def start():  # it will ask row number to be updated and will process all the data
+    global rows, a, b
+    a, b = map(int, input("Enter Row Numbers: ").split())
+    print("Importing Data")
+    rows = filterData(a, b)
+    print("Processing Data")
+    for i in rows:
+        updatPrice(i)
+        tradeConfirmation(i)
+        checkTatget(i)
+        checkStop(i)
+    update2Sheet()
+    print("Done")
+
+
+if __name__ == "__main__":
+    start()
