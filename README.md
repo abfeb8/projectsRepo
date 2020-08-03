@@ -44,8 +44,6 @@
 
 <br />
 
----
-
 [twitter]: https://twitter.com/itsabi_z1
 [instagram]: https://instagram.com/itsabi_z1
 [linkedin]: https://linkedin.com/in/abfeb8
