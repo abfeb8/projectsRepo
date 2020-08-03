@@ -34,7 +34,6 @@
 -   [Portfolio][rgbgame]
 
 <br />
-<br />
 
 ---
 
@@ -44,7 +43,6 @@
 [<img align="left" alt="AB | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
 [<img align="left" alt="AB | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
 
-<br />
 
 [twitter]: https://twitter.com/itsabi_z1
 [instagram]: https://instagram.com/itsabi_z1
