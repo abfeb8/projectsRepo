@@ -31,7 +31,7 @@
 
 -   [TO-DO][todo]
 -   [rgb Gussing Game][rgbgame]
--   [Portfolio][rgbgame]
+-   [Portfolio][portfolio]
 
 <br />
 
@@ -49,4 +49,4 @@
 [linkedin]: https://linkedin.com/in/abfeb8
 [todo]: toDo/index.html
 [rgbgame]: rgbGuessingGame/structure.html
-[rgbgame]: portfolio/portfolio.html
+[portfolio]: Portfolio/Portfolio.html
