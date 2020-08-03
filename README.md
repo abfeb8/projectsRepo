@@ -30,11 +30,11 @@
 ### 📕 My Projects
 
 -   [TO-DO][todo]
--   [rgbGussing Game][rgbguessinggame\structure.html]
--   [Portfolio][portfolio\portfolio.html]
+-   [rgb Gussing Game][rgbgame]
+-   [Portfolio][rgbgame]
 
-      <br />
-      <br />
+<br />
+<br />
 
 ---
 
@@ -52,3 +52,5 @@
 [instagram]: https://instagram.com/itsabi_z1
 [linkedin]: https://linkedin.com/in/abfeb8
 [todo]: toDo/index.html
+[rgbgame]: rgbguessinggame/structure.html
+[rgbgame]: portfolio/portfolio.html
