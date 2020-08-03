@@ -29,17 +29,12 @@
 
 ### 📕 My Projects
 
--   [TO-DO][tod0]
-    <!-- <li>
-                              <a href="toDo\index.html">To-Do</a>
-                          </li>
-                          <li>
-                              <a href="rgbGuessingGame\structure.html">rgbGuessingGame </a>
-                          </li>
-                          <li>
-                              <a href="Portfolio\Portfolio.html">samplePortfolioSite </a> -->
-    <br />
-    <br />
+-   [TO-DO][todo]
+-   [rgbGussing Game][rgbguessinggame\structure.html]
+-   [Portfolio][portfolio\portfolio.html]
+
+      <br />
+      <br />
 
 ---
 
