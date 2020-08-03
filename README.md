@@ -51,4 +51,4 @@
 [twitter]: https://twitter.com/itsabi_z1
 [instagram]: https://instagram.com/itsabi_z1
 [linkedin]: https://linkedin.com/in/abfeb8
-[todo]: toDo\index.html
+[todo]: toDo/index.html
