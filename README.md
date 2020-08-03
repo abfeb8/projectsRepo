@@ -30,11 +30,18 @@
 ### 📕 My Projects
 
 -   [TO-DO][todo]
+<<<<<<< HEAD
 -   [rgbGussing Game][rgbgame]
 -   [Portfolio][rgbgame]
 
 <br />
 <br />
+=======
+-   [rgb Gussing Game][rgbgame]
+-   [Portfolio][portfolio]
+
+<br />
+>>>>>>> c2d46f4735c51e8a08ce9bd174d0e5244e17d608
 
 ---
 
@@ -44,13 +51,15 @@
 [<img align="left" alt="AB | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
 [<img align="left" alt="AB | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
 
-<br />
-
----
 
 [twitter]: https://twitter.com/itsabi_z1
 [instagram]: https://instagram.com/itsabi_z1
 [linkedin]: https://linkedin.com/in/abfeb8
 [todo]: toDo/index.html
+<<<<<<< HEAD
 [rgbgame]: rgbguessinggame\structure.html
 [rgbgame]: portfolio\portfolio.html
+=======
+[rgbgame]: rgbGuessingGame/structure.html
+[portfolio]: Portfolio/Portfolio.html
+>>>>>>> c2d46f4735c51e8a08ce9bd174d0e5244e17d608
