@@ -47,5 +47,5 @@
 [instagram]: https://instagram.com/itsabi_z1
 [linkedin]: https://linkedin.com/in/abfeb8
 [todo]: toDo/index.html
-[rgbgame]: rgbguessinggame/structure.html
-[portfolio]: portfolio/portfolio.html
+[rgbgame]: rgbGuessingGame/structure.html
+[portfolio]: Portfolio/Portfolio.html
