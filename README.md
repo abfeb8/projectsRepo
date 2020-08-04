@@ -39,13 +39,16 @@
 
 ### Connect with me:
 
+[<img align="left" alt="AB | Gmail" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg" />][gmail]
 [<img align="left" alt="AB | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />][twitter]
 [<img align="left" alt="AB | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
 [<img align="left" alt="AB | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
 
+
 [twitter]: https://twitter.com/itsabi_z1
 [instagram]: https://instagram.com/itsabi_z1
 [linkedin]: https://linkedin.com/in/abfeb8
+[gmail]: https://emailabhishekmalviya@gmail.com
 [todo]: toDo/index.html
 [rgbgame]: rgbGuessingGame/structure.html
 [portfolio]: Portfolio/Portfolio.html
