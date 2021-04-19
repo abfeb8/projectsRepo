@@ -3,8 +3,8 @@
 ## I'm a Student, Competitive Coder, Developer, and Electrical Engineer.
 
 -   I’m currently studying at MITS Gwalior
--   I’m currently learning Web Development
--   2020 Goals: To gain in-depth knowledge about Programing
+-   At present I am learning Web Development
+-   2021 Goals: To gain in-depth knowledge about Programing
 -   Fun fact: I love to read and play football
 
 ### Languages and Tools I know:
@@ -31,7 +31,7 @@
 
 -   [TO-DO][todo]
 -   [rgb Gussing Game][rgbgame]
--   [Portfolio][portfolio]
+-   [Pricing Panel][pricingpanel]
 
 <br />
 
@@ -52,3 +52,4 @@
 [todo]: toDo/index.html
 [rgbgame]: rgbGuessingGame/structure.html
 [portfolio]: Portfolio/Portfolio.html
+[pricingpanel]: PricingPanel/index.html
