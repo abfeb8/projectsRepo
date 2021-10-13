@@ -1,9 +1,9 @@
 ### Hello, I'm Abhishek Malviaya
 
-## I'm a Student, Competitive Coder, Developer, and Electrical Engineer.
+## A Learner, Competitive Coder, Developer, and Electrical Engineer.
 
--   I’m currently studying at MITS Gwalior
--   At present I am learning Web Development
+-   I’m currently working with Infosys as DSE
+-   At present I am learning Data Analytics
 -   2021 Goals: To gain in-depth knowledge about Programing
 -   Fun fact: I love to read and play football
 
